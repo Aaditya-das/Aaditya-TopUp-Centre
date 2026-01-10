@@ -19,6 +19,15 @@ button{background:#22c55e;font-weight:bold}
 footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 .owner-login{background:#1e293b;padding:15px;border-radius:10px;margin-top:20px;text-align:center}
 </style>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+   emailjs.init("YOUR_EMAILJS_USER_ID"); // replace with your EmailJS user ID
+})();
+</script>
+
 </head>
 <body>
 
@@ -55,8 +64,7 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 <div class="section" id="step3">
   <div class="card qr">
     <h3>💵 Pay via eSewa</h3>
-    <!-- Your eSewa QR code -->
-    <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
+    <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974" alt="eSewa QR">
     <p>After payment tap confirm order</p>
     <button onclick="confirmOrder()">Confirm Order</button>
   </div>
@@ -94,9 +102,22 @@ function goPayment(){
   document.getElementById('step3').classList.add('active');
 }
 
-// STEP 3: Confirm Order (this will just alert user, no link)
+// STEP 3: Confirm Order → send Gmail via EmailJS
 function confirmOrder(){
-  alert("✅ Order Confirmed!\n\nPackage: " + selectedPackage + "\nGame: " + document.getElementById('game').value + "\nUID: " + document.getElementById('uid').value + "\n\nSend screenshot to owner via WhatsApp / Gmail.");
+  const gameName = document.getElementById('game').value;
+  const uid = document.getElementById('uid').value;
+
+  emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+    package:selectedPackage,
+    game:gameName,
+    uid:uid,
+    email_to:"aadityadas4000@gmail.com"
+  })
+  .then(function(){
+    alert("✅ Order Confirmed! Notification sent to Gmail.");
+  },function(error){
+    alert("❌ Something went wrong. Try again.\n"+error);
+  });
 }
 
 // OWNER LOGIN
@@ -104,7 +125,7 @@ function ownerLogin(){
   const username = document.getElementById('user').value;
   const password = document.getElementById('pass').value;
   if(username === "aaditya" && password === "admin123"){
-    alert("Owner login successful! Check your Gmail or WhatsApp for orders manually.");
+    alert("Owner login successful! Check your Gmail for orders.");
   } else {
     alert("Wrong login details!");
   }
@@ -112,4 +133,4 @@ function ownerLogin(){
 </script>
 
 </body>
-</html>  
+  </html>
