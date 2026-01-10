@@ -16,7 +16,6 @@ input,button{width:100%;padding:10px;border-radius:6px;border:none;margin-top:8p
 button{background:#22c55e;font-weight:bold}
 .qr{text-align:center}
 .qr img{max-width:220px;background:#fff;padding:5px;border-radius:8px}
-#preview{display:none;max-width:100%;margin-top:10px;border-radius:8px}
 footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 </style>
 </head>
@@ -29,10 +28,12 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 <div class="section active" id="step1">
 <div class="card">
 <h3>💎 Select Diamond Package</h3>
+
 <div class="price" onclick="selectPack('Rs.100 → 115 Diamonds')">Rs.100 → 115 💎</div>
 <div class="price" onclick="selectPack('Rs.200 → 240 Diamonds')">Rs.200 → 240 💎</div>
 <div class="price" onclick="selectPack('Rs.395 → 480 Diamonds')">Rs.395 → 480 💎</div>
 <div class="price" onclick="selectPack('Rs.710 → 850 Diamonds')">Rs.710 → 850 💎</div>
+
 </div>
 </div>
 
@@ -51,12 +52,9 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 <div class="card qr">
 <h3>💵 Pay via eSewa</h3>
 <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
-<p>Pay & upload screenshot</p>
+<p>After payment tap confirm order</p>
 
-<input type="file" accept="image/*" onchange="previewImg(event)">
-<img id="preview">
-
-<button onclick="confirmOrder()">Confirm Order</button>
+<button onclick="openForm()">Confirm Order</button>
 </div>
 </div>
 
@@ -80,26 +78,17 @@ function goPayment(){
   step3.classList.add("active");
 }
 
-function previewImg(e){
-  const img=document.getElementById("preview");
-  img.src=URL.createObjectURL(e.target.files[0]);
-  img.style.display="block";
-}
+function openForm(){
+  const formLink =
+  "PASTE_YOUR_GOOGLE_FORM_LINK_HERE";
 
-function confirmOrder(){
-  const email="aadityadas4000@gmail.com";
-  const subject="New Top Up Order";
-  const body=
-`Package: ${selectedPackage}
-Game: ${game.value}
-UID: ${uid.value}
-Payment: eSewa
+  const url =
+  formLink +
+  "?entry.XXXX=" + encodeURIComponent(selectedPackage) +
+  "&entry.YYYY=" + encodeURIComponent(game.value) +
+  "&entry.ZZZZ=" + encodeURIComponent(uid.value);
 
-NOTE:
-Please attach payment screenshot manually before sending.`;
-
-  window.location.href=
-`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.open(url, "_blank");
 }
 </script>
 
