@@ -24,7 +24,7 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
 
 <header>🔥 Aaditya Top Up Centre 🔥</header>
 
-<!-- ===================== STEP 1: DIAMOND SELECT ===================== -->
+<!-- STEP 1: DIAMOND SELECT -->
 <div class="section active" id="step1">
   <div class="card">
     <h3>💎 Select Diamond Package</h3>
@@ -41,7 +41,7 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
   </div>
 </div>
 
-<!-- ===================== STEP 2: GAME DETAILS ===================== -->
+<!-- STEP 2: GAME DETAILS -->
 <div class="section" id="step2">
   <div class="card">
     <h3>🎮 Enter Game Details</h3>
@@ -51,17 +51,18 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
   </div>
 </div>
 
-<!-- ===================== STEP 3: PAYMENT ===================== -->
+<!-- STEP 3: PAYMENT -->
 <div class="section" id="step3">
   <div class="card qr">
     <h3>💵 Pay via eSewa</h3>
+    <!-- Your eSewa QR code -->
     <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
     <p>After payment tap confirm order</p>
-    <button onclick="openForm()">Confirm Order</button>
+    <button onclick="confirmOrder()">Confirm Order</button>
   </div>
 </div>
 
-<!-- ===================== OWNER LOGIN ===================== -->
+<!-- OWNER LOGIN -->
 <div class="owner-login section" id="ownerLogin">
   <h3>🔐 Owner Login</h3>
   <input id="user" placeholder="Username">
@@ -69,20 +70,19 @@ footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
   <button onclick="ownerLogin()">Login</button>
 </div>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>© 2026 Aaditya Top Up Centre</footer>
 
 <script>
 let selectedPackage="";
 
-// ---------- STEP 1 ----------
+// STEP 1: Select package
 function selectPack(p){
   selectedPackage = p;
   document.getElementById('step1').classList.remove('active');
   document.getElementById('step2').classList.add('active');
 }
 
-// ---------- STEP 2 ----------
+// STEP 2: Enter Game Details
 function goPayment(){
   let gameName = document.getElementById('game').value;
   let uid = document.getElementById('uid').value;
@@ -94,30 +94,17 @@ function goPayment(){
   document.getElementById('step3').classList.add('active');
 }
 
-// ---------- STEP 3: OPEN GOOGLE FORM ----------
-function openForm(){
-  const gameName = document.getElementById('game').value;
-  const uid = document.getElementById('uid').value;
-
-  const formLink = "PASTE_YOUR_GOOGLE_FORM_PRE-FILLED_LINK_HERE";
-
-  const url =
-    formLink +
-    "?entry.XXXX=" + encodeURIComponent(selectedPackage) +
-    "&entry.YYYY=" + encodeURIComponent(gameName) +
-    "&entry.ZZZZ=" + encodeURIComponent(uid);
-
-  window.open(url, "_blank");
+// STEP 3: Confirm Order (this will just alert user, no link)
+function confirmOrder(){
+  alert("✅ Order Confirmed!\n\nPackage: " + selectedPackage + "\nGame: " + document.getElementById('game').value + "\nUID: " + document.getElementById('uid').value + "\n\nSend screenshot to owner via WhatsApp / Gmail.");
 }
 
-// ---------- OWNER LOGIN ----------
+// OWNER LOGIN
 function ownerLogin(){
   const username = document.getElementById('user').value;
   const password = document.getElementById('pass').value;
   if(username === "aaditya" && password === "admin123"){
-    alert("Owner login successful! Open your Google Form dashboard manually.");
-    // You can redirect to dashboard.html if you want
-    window.location.href="https://docs.google.com/forms/d/FORM_ID/viewresponses";
+    alert("Owner login successful! Check your Gmail or WhatsApp for orders manually.");
   } else {
     alert("Wrong login details!");
   }
@@ -125,4 +112,4 @@ function ownerLogin(){
 </script>
 
 </body>
-</html>
+</html>  
