@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aaditya Top Up Centre</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aaditya Top Up Centre</title>
 <style>
 body{margin:0;font-family:Arial;background:#020617;color:#fff}
 header{padding:15px;text-align:center;background:#020617;color:#38bdf8;font-size:22px;font-weight:bold}
@@ -17,78 +17,110 @@ button{background:#22c55e;font-weight:bold}
 .qr{text-align:center}
 .qr img{max-width:220px;background:#fff;padding:5px;border-radius:8px}
 footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
+.owner-login{background:#1e293b;padding:15px;border-radius:10px;margin-top:20px;text-align:center}
 </style>
 </head>
-
 <body>
 
 <header>🔥 Aaditya Top Up Centre 🔥</header>
 
-<!-- STEP 1 -->
+<!-- ===================== STEP 1: DIAMOND SELECT ===================== -->
 <div class="section active" id="step1">
-<div class="card">
-<h3>💎 Select Diamond Package</h3>
-
-<div class="price" onclick="selectPack('Rs.100 → 115 Diamonds')">Rs.100 → 115 💎</div>
-<div class="price" onclick="selectPack('Rs.200 → 240 Diamonds')">Rs.200 → 240 💎</div>
-<div class="price" onclick="selectPack('Rs.395 → 480 Diamonds')">Rs.395 → 480 💎</div>
-<div class="price" onclick="selectPack('Rs.710 → 850 Diamonds')">Rs.710 → 850 💎</div>
-
+  <div class="card">
+    <h3>💎 Select Diamond Package</h3>
+    <div class="price" onclick="selectPack('Rs.100 → 115 Diamonds')">Rs.100 → 115 💎</div>
+    <div class="price" onclick="selectPack('Rs.200 → 240 Diamonds')">Rs.200 → 240 💎</div>
+    <div class="price" onclick="selectPack('Rs.295 → 355 Diamonds')">Rs.295 → 355 💎</div>
+    <div class="price" onclick="selectPack('Rs.395 → 480 Diamonds')">Rs.395 → 480 💎</div>
+    <div class="price" onclick="selectPack('Rs.530 → 610 Diamonds')">Rs.530 → 610 💎</div>
+    <div class="price" onclick="selectPack('Rs.710 → 850 Diamonds')">Rs.710 → 850 💎</div>
+    <div class="price" onclick="selectPack('Rs.810 → 965 Diamonds')">Rs.810 → 965 💎</div>
+    <div class="price" onclick="selectPack('Rs.910 → 1,090 Diamonds')">Rs.910 → 1,090 💎</div>
+    <div class="price" onclick="selectPack('Rs.1010 → 1,240 Diamonds')">Rs.1010 → 1,240 💎</div>
+    <div class="price" onclick="selectPack('Rs.1240 → 1,480 Diamonds')">Rs.1240 → 1,480 💎</div>
+  </div>
 </div>
-</div>
 
-<!-- STEP 2 -->
+<!-- ===================== STEP 2: GAME DETAILS ===================== -->
 <div class="section" id="step2">
-<div class="card">
-<h3>🎮 Enter Game Details</h3>
-<input id="game" placeholder="Game Name (Free Fire)">
-<input id="uid" placeholder="Player UID">
-<button onclick="goPayment()">Go to Payment</button>
-</div>
+  <div class="card">
+    <h3>🎮 Enter Game Details</h3>
+    <input id="game" placeholder="Game Name (Free Fire)">
+    <input id="uid" placeholder="Player UID">
+    <button onclick="goPayment()">Go to Payment</button>
+  </div>
 </div>
 
-<!-- STEP 3 -->
+<!-- ===================== STEP 3: PAYMENT ===================== -->
 <div class="section" id="step3">
-<div class="card qr">
-<h3>💵 Pay via eSewa</h3>
-<img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
-<p>After payment tap confirm order</p>
-
-<button onclick="openForm()">Confirm Order</button>
+  <div class="card qr">
+    <h3>💵 Pay via eSewa</h3>
+    <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
+    <p>After payment tap confirm order</p>
+    <button onclick="openForm()">Confirm Order</button>
+  </div>
 </div>
+
+<!-- ===================== OWNER LOGIN ===================== -->
+<div class="owner-login section" id="ownerLogin">
+  <h3>🔐 Owner Login</h3>
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+  <button onclick="ownerLogin()">Login</button>
 </div>
 
+<!-- ===================== FOOTER ===================== -->
 <footer>© 2026 Aaditya Top Up Centre</footer>
 
 <script>
 let selectedPackage="";
 
+// ---------- STEP 1 ----------
 function selectPack(p){
-  selectedPackage=p;
-  step1.classList.remove("active");
-  step2.classList.add("active");
+  selectedPackage = p;
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
 }
 
+// ---------- STEP 2 ----------
 function goPayment(){
-  if(!game.value || !uid.value){
+  let gameName = document.getElementById('game').value;
+  let uid = document.getElementById('uid').value;
+  if(!gameName || !uid){
     alert("Please enter Game Name & UID");
     return;
   }
-  step2.classList.remove("active");
-  step3.classList.add("active");
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step3').classList.add('active');
 }
 
+// ---------- STEP 3: OPEN GOOGLE FORM ----------
 function openForm(){
-  const formLink =
-  "PASTE_YOUR_GOOGLE_FORM_LINK_HERE";
+  const gameName = document.getElementById('game').value;
+  const uid = document.getElementById('uid').value;
+
+  const formLink = "PASTE_YOUR_GOOGLE_FORM_PRE-FILLED_LINK_HERE";
 
   const url =
-  formLink +
-  "?entry.XXXX=" + encodeURIComponent(selectedPackage) +
-  "&entry.YYYY=" + encodeURIComponent(game.value) +
-  "&entry.ZZZZ=" + encodeURIComponent(uid.value);
+    formLink +
+    "?entry.XXXX=" + encodeURIComponent(selectedPackage) +
+    "&entry.YYYY=" + encodeURIComponent(gameName) +
+    "&entry.ZZZZ=" + encodeURIComponent(uid);
 
   window.open(url, "_blank");
+}
+
+// ---------- OWNER LOGIN ----------
+function ownerLogin(){
+  const username = document.getElementById('user').value;
+  const password = document.getElementById('pass').value;
+  if(username === "aaditya" && password === "admin123"){
+    alert("Owner login successful! Open your Google Form dashboard manually.");
+    // You can redirect to dashboard.html if you want
+    window.location.href="https://docs.google.com/forms/d/FORM_ID/viewresponses";
+  } else {
+    alert("Wrong login details!");
+  }
 }
 </script>
 
