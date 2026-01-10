@@ -1,165 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Aaditya Top Up Centre</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#0f172a;
-      color:#fff;
-    }
-    header{
-      background:#020617;
-      padding:15px;
-      text-align:center;
-      font-size:22px;
-      font-weight:bold;
-      color:#38bdf8;
-    }
-    section{
-      padding:15px;
-    }
-    .card{
-      background:#020617;
-      border-radius:10px;
-      padding:15px;
-      margin-bottom:15px;
-      box-shadow:0 0 10px rgba(0,0,0,0.4);
-    }
-    h2{
-      color:#22c55e;
-      margin-top:0;
-    }
-    ul{
-      padding-left:18px;
-    }
-    li{
-      margin-bottom:6px;
-    }
-    .qr{
-      text-align:center;
-    }
-    .qr img{
-      max-width:220px;
-      border-radius:10px;
-      background:#fff;
-      padding:5px;
-    }
-    input, textarea, select, button{
-      width:100%;
-      padding:10px;
-      margin-top:8px;
-      border:none;
-      border-radius:6px;
-      font-size:15px;
-    }
-    button{
-      background:#22c55e;
-      color:#000;
-      font-weight:bold;
-      cursor:pointer;
-    }
-    .whatsapp{
-      background:#25D366;
-      color:#000;
-      text-align:center;
-      padding:12px;
-      border-radius:8px;
-      font-weight:bold;
-      margin-top:10px;
-      display:block;
-      text-decoration:none;
-    }
-    footer{
-      text-align:center;
-      font-size:13px;
-      padding:10px;
-      color:#94a3b8;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Aaditya Top Up Centre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;font-family:Arial;background:#020617;color:#fff}
+header{padding:15px;text-align:center;background:#020617;color:#38bdf8;font-size:22px;font-weight:bold}
+.section{display:none;padding:15px}
+.section.active{display:block}
+.card{background:#0f172a;padding:15px;border-radius:10px;margin-bottom:15px}
+.btn{background:#22c55e;color:#000;padding:12px;border:none;border-radius:8px;font-weight:bold;width:100%;margin-top:10px}
+.price{background:#1e293b;padding:10px;border-radius:6px;margin-bottom:8px;cursor:pointer}
+.price:hover{background:#22c55e;color:#000}
+input{width:100%;padding:10px;border-radius:6px;border:none;margin-top:8px}
+.qr{text-align:center}
+.qr img{max-width:220px;background:#fff;padding:5px;border-radius:8px}
+footer{text-align:center;font-size:13px;color:#94a3b8;padding:10px}
+</style>
 </head>
 
 <body>
 
 <header>🔥 Aaditya Top Up Centre 🔥</header>
 
-<section class="card">
-  <h2>💎 Top-Up Price List</h2>
-  <ul>
-    <li>Rs.100 → 115 💎</li>
-    <li>Rs.200 → 240 💎</li>
-    <li>Rs.295 → 355 💎</li>
-    <li>Rs.395 → 480 💎</li>
-    <li>Rs.530 → 610 💎</li>
-    <li>Rs.710 → 850 💎</li>
-    <li>Rs.810 → 965 💎</li>
-    <li>Rs.910 → 1090 💎</li>
-    <li>Rs.1010 → 1240 💎</li>
-    <li>Rs.1240 → 1480 💎</li>
-    <li>Rs.1430 → 1720 💎</li>
-    <li>Rs.1620 → 1960 💎</li>
-    <li>Rs.1615 → 2090 💎</li>
-    <li>Rs.2150 → 2530 💎</li>
-    <li>Rs.4800 → 5060 💎</li>
-    <li>Rs.6700 → 7590 💎</li>
-    <li>Rs.8600 → 10120 💎</li>
-    <li>Rs.16200 → 20240 💎</li>
-  </ul>
-</section>
+<!-- STEP 1 -->
+<div class="section active" id="step1">
+<div class="card">
+<h3>💎 Select Diamond Package</h3>
 
-<section class="card">
-  <h2>🎟 Membership Deals</h2>
-  <ul>
-    <li>Rs.200 → Weekly (450 💎)</li>
-    <li>Rs.1090 → Monthly (2500 💎)</li>
-    <li>Rs.75 → Weekly Lite (90 💎)</li>
-    <li>Rs.790 → Level Up (1270 💎)</li>
-  </ul>
-</section>
+<div class="price" onclick="selectPack('Rs.100 → 115 Diamonds')">Rs.100 → 115 💎</div>
+<div class="price" onclick="selectPack('Rs.200 → 240 Diamonds')">Rs.200 → 240 💎</div>
+<div class="price" onclick="selectPack('Rs.295 → 355 Diamonds')">Rs.295 → 355 💎</div>
+<div class="price" onclick="selectPack('Rs.395 → 480 Diamonds')">Rs.395 → 480 💎</div>
+<div class="price" onclick="selectPack('Rs.530 → 610 Diamonds')">Rs.530 → 610 💎</div>
+<div class="price" onclick="selectPack('Rs.710 → 850 Diamonds')">Rs.710 → 850 💎</div>
 
-<section class="card">
-  <h2>🛡 Evo Access</h2>
-  <ul>
-    <li>Rs.140 → 3 Days</li>
-    <li>Rs.195 → 7 Days</li>
-    <li>Rs.460 → 30 Days</li>
-  </ul>
-</section>
+</div>
+</div>
 
-<section class="card qr">
-  <h2>💵 Pay via eSewa</h2>
-  <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974" alt="eSewa QR">
-  <p>📸 Pay & take screenshot</p>
-</section>
+<!-- STEP 2 -->
+<div class="section" id="step2">
+<div class="card">
+<h3>🎮 Enter Game Details</h3>
+<input id="game" placeholder="Game Name (Free Fire)">
+<input id="uid" placeholder="Player UID">
+<button class="btn" onclick="goPayment()">Go to Payment</button>
+</div>
+</div>
 
-<section class="card">
-  <h2>🆔 Order Form</h2>
+<!-- STEP 3 -->
+<div class="section" id="step3">
+<div class="card qr">
+<h3>💵 Pay via eSewa</h3>
+<img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974">
+<p>Pay & take screenshot</p>
+<button class="btn" onclick="confirmOrder()">Confirm Order</button>
+</div>
+</div>
 
-  <form action="mailto:aadityadas4000@gmail.com" method="post" enctype="text/plain">
-    <input type="text" name="Player ID" placeholder="Enter Player ID" required>
-    <select name="Package" required>
-      <option value="">Select Package</option>
-      <option>Diamond Top-Up</option>
-      <option>Weekly / Monthly</option>
-      <option>Evo Access</option>
-      <option>Level Up</option>
-    </select>
-    <textarea name="Message" placeholder="Order details"></textarea>
-    <button type="submit">Send Order to Gmail</button>
-  </form>
+<footer>© 2026 Aaditya Top Up Centre</footer>
 
-  <a class="whatsapp"
-     href="https://wa.me/977XXXXXXXXXX?text=Hello%20Aaditya%20Top%20Up%20Centre,%20I%20want%20to%20place%20an%20order">
-     📲 Order on WhatsApp
-  </a>
-</section>
+<script>
+let selectedPackage="";
 
-<footer>
-  © 2026 Aaditya Top Up Centre
-</footer>
+function selectPack(p){
+  selectedPackage=p;
+  document.getElementById("step1").classList.remove("active");
+  document.getElementById("step2").classList.add("active");
+}
+
+function goPayment(){
+  if(!uid.value || !game.value){
+    alert("Please fill all details");
+    return;
+  }
+  document.getElementById("step2").classList.remove("active");
+  document.getElementById("step3").classList.add("active");
+}
+
+function confirmOrder(){
+  const email="aadityadas4000@gmail.com";
+  const subject="New Top Up Order";
+  const body=
+`Package: ${selectedPackage}
+Game: ${game.value}
+UID: ${uid.value}
+Payment: eSewa`;
+  window.location.href=
+`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
 
 </body>
 </html>
