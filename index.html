@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aaditya Top Up Centre | Instant Free Fire Diamonds</title>
 
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -23,10 +25,11 @@ body{font-family:'Exo 2',sans-serif; background:var(--dark-bg); color:var(--text
 .hero{padding:40px; margin:30px auto; border:1px solid var(--primary-red); border-radius:15px; text-align:center;}
 .package-card{background:var(--card-bg); border-radius:12px; padding:0; margin-bottom:20px;}
 .package-header{background:linear-gradient(to right,var(--primary-red),var(--primary-orange)); color:#fff; padding:10px; font-weight:bold; text-align:center;}
-.btn-buy{background:linear-gradient(to right,var(--primary-red),var(--primary-orange)); color:#fff; border:none; padding:12px 25px; border-radius:8px; font-weight:bold;}
+.btn-buy{background:linear-gradient(to right,var(--primary-red),var(--primary-orange)); color:#fff; border:none; padding:12px 25px; border-radius:8px; font-weight:bold; margin-top:5px;}
 .qr-container{background:#fff; padding:20px; border-radius:10px; margin:20px auto; width:200px;}
 .upload-area{border:2px dashed var(--primary-yellow); border-radius:10px; padding:20px; text-align:center; margin:20px 0;}
 .modal-body input, .modal-body textarea{margin:5px 0;}
+.section-title{margin:30px 0; text-align:center; font-weight:bold; color:var(--primary-yellow);}
 </style>
 </head>
 <body>
@@ -42,7 +45,10 @@ body{font-family:'Exo 2',sans-serif; background:var(--dark-bg); color:var(--text
   <ul class="navbar-nav ms-auto">
     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
     <li class="nav-item"><a class="nav-link" href="#topup">Top-Up</a></li>
-    <li class="nav-item"><a class="nav-link" href="#" onclick="openAdminLogin()">Admin</a></li>
+    <li class="nav-item"><a class="nav-link" href="#membership">Membership</a></li>
+    <li class="nav-item"><a class="nav-link" href="#evo">Evo Access</a></li>
+    <li class="nav-item"><a class="nav-link" href="#levelup">Level-Up</a></li>
+    <li class="nav-item"><a class="nav-link" href="#adminLogin" onclick="openAdminLogin()">Admin</a></li>
   </ul>
 </div>
 </div>
@@ -51,111 +57,78 @@ body{font-family:'Exo 2',sans-serif; background:var(--dark-bg); color:var(--text
 <!-- HERO -->
 <section id="home" class="container">
 <div class="hero">
-<h1>📌 TOP-UP LIST 💎</h1>
-<p>Aaditya Top Up Centre ⚡</p>
+<h1>📌📌 Top-Up List 💎</h1>
+<p>Aaditya Top Up Centre ⚡⚡</p>
 <a href="#topup" class="btn btn-buy mt-3">VIEW ALL PACKAGES</a>
 </div>
 </section>
 
-<!-- TOP-UP PACKAGES -->
+<!-- DIAMOND PACKAGES -->
 <section id="topup" class="container mt-5">
+<h2 class="section-title">💎 Regular Diamond Packages</h2>
 <div class="row">
+  <!-- Packages List -->
+  <script>
+  const diamondPackages = [
+    {price:100, diamonds:115},{price:200, diamonds:240},{price:295, diamonds:355},
+    {price:395, diamonds:480},{price:530, diamonds:610},{price:710, diamonds:850},
+    {price:810, diamonds:965},{price:910, diamonds:1090},{price:1010, diamonds:1240},
+    {price:1240, diamonds:1480},{price:1430, diamonds:1720},{price:1620, diamonds:1960},
+    {price:1615, diamonds:2090},{price:2150, diamonds:2530},{price:4800, diamonds:5060},
+    {price:6700, diamonds:7590},{price:8600, diamonds:10120},{price:16200, diamonds:20240}
+  ];
 
-<!-- Diamond Packages -->
-<script>
-const diamondPackages = [
-  {name:"₹100", diamonds:115, price:100},
-  {name:"₹200", diamonds:240, price:200},
-  {name:"₹295", diamonds:355, price:295},
-  {name:"₹395", diamonds:480, price:395},
-  {name:"₹530", diamonds:610, price:530},
-  {name:"₹710", diamonds:850, price:710},
-  {name:"₹810", diamonds:965, price:810},
-  {name:"₹910", diamonds:1090, price:910},
-  {name:"₹1010", diamonds:1240, price:1010},
-  {name:"₹1240", diamonds:1480, price:1240},
-  {name:"₹1430", diamonds:1720, price:1430},
-  {name:"₹1620", diamonds:1960, price:1620},
-  {name:"₹1615", diamonds:2090, price:1615},
-  {name:"₹2150", diamonds:2530, price:2150},
-  {name:"₹4800", diamonds:5060, price:4800},
-  {name:"₹6700", diamonds:7590, price:6700},
-  {name:"₹8600", diamonds:10120, price:8600},
-  {name:"₹16200", diamonds:20240, price:16200}
-];
-
-diamondPackages.forEach(pkg=>{
-  document.write(`
-    <div class="col-md-4 col-lg-3">
+  diamondPackages.forEach(pkg=>{
+    document.write(`
+      <div class="col-md-4 col-lg-3 mb-4">
       <div class="package-card">
-        <div class="package-header">${pkg.name} PACK</div>
+        <div class="package-header">₹${pkg.price} PACK</div>
         <div class="text-center p-3">
           <h3>${pkg.diamonds} 💎</h3>
           <p>₹${pkg.price} Only</p>
           <button class="btn btn-buy w-100" data-package="${pkg.diamonds}" data-price="${pkg.price}">BUY NOW</button>
         </div>
       </div>
-    </div>
-  `);
-});
-</script>
-
+      </div>
+    `);
+  });
+  </script>
 </div>
+</section>
 
-<!-- Membership Deals -->
-<h3 class="text-center text-warning mt-5">🎟 Membership Deals</h3>
+<!-- MEMBERSHIP -->
+<section id="membership" class="container mt-5">
+<h2 class="section-title">🎟 Membership Deals</h2>
 <div class="row">
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">Weekly</div>
-      <p>450 💎</p>
-      <p>Rs. 200</p>
-      <button class="btn btn-buy w-100" data-package="450" data-price="200">BUY NOW</button>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">Monthly</div>
-      <p>2,500 💎</p>
-      <p>Rs. 1090</p>
-      <button class="btn btn-buy w-100" data-package="2500" data-price="1090">BUY NOW</button>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">Weekly Lite</div>
-      <p>90 💎</p>
-      <p>Rs. 75</p>
-      <button class="btn btn-buy w-100" data-package="90" data-price="75">BUY NOW</button>
-    </div>
-  </div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Weekly</div><div class="p-3 text-center"><h3>450 💎</h3><p>₹200</p><button class="btn btn-buy w-100" data-package="450" data-price="200">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Monthly</div><div class="p-3 text-center"><h3>2500 💎</h3><p>₹1090</p><button class="btn btn-buy w-100" data-package="2500" data-price="1090">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Weekly Lite</div><div class="p-3 text-center"><h3>90 💎</h3><p>₹75</p><button class="btn btn-buy w-100" data-package="90" data-price="75">BUY NOW</button></div></div></div>
+  <div class="col-md-4 mt-2"><div class="package-card"><div class="package-header">Level Up</div><div class="p-3 text-center"><h3>1270 💎</h3><p>₹790</p><button class="btn btn-buy w-100" data-package="1270" data-price="790">BUY NOW</button></div></div></div>
 </div>
+</section>
 
-<!-- Evo Access -->
-<h3 class="text-center text-warning mt-5">🛡 Evo Access</h3>
+<!-- EVO ACCESS -->
+<section id="evo" class="container mt-5">
+<h2 class="section-title">🛡 Evo Access</h2>
 <div class="row">
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">3 Days</div>
-      <p>Rs. 140</p>
-      <button class="btn btn-buy w-100" data-package="3 Days Evo" data-price="140">BUY NOW</button>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">7 Days</div>
-      <p>Rs. 195</p>
-      <button class="btn btn-buy w-100" data-package="7 Days Evo" data-price="195">BUY NOW</button>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="package-card text-center p-3">
-      <div class="package-header">30 Days</div>
-      <p>Rs. 460</p>
-      <button class="btn btn-buy w-100" data-package="30 Days Evo" data-price="460">BUY NOW</button>
-    </div>
-  </div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">3 Days</div><div class="p-3 text-center"><h3>3 Days</h3><p>₹140</p><button class="btn btn-buy w-100" data-package="3 Days" data-price="140">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">7 Days</div><div class="p-3 text-center"><h3>7 Days</h3><p>₹195</p><button class="btn btn-buy w-100" data-package="7 Days" data-price="195">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">30 Days</div><div class="p-3 text-center"><h3>30 Days</h3><p>₹460</p><button class="btn btn-buy w-100" data-package="30 Days" data-price="460">BUY NOW</button></div></div></div>
 </div>
+</section>
+
+<!-- LEVEL-UP -->
+<section id="levelup" class="container mt-5">
+<h2 class="section-title">📊 Level-Up Discount Package (Total ₹790)</h2>
+<div class="row">
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Level 6</div><div class="p-3 text-center"><h3>120 💎</h3><p>₹85</p><button class="btn btn-buy w-100" data-package="120" data-price="85">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Level 10</div><div class="p-3 text-center"><h3>200 💎</h3><p>₹140</p><button class="btn btn-buy w-100" data-package="200" data-price="140">BUY NOW</button></div></div></div>
+  <div class="col-md-4"><div class="package-card"><div class="package-header">Level 15</div><div class="p-3 text-center"><h3>200 💎</h3><p>₹140</p><button class="btn btn-buy w-100" data-package="200" data-price="140">BUY NOW</button></div></div></div>
+  <div class="col-md-4 mt-2"><div class="package-card"><div class="package-header">Level 20</div><div class="p-3 text-center"><h3>200 💎</h3><p>₹140</p><button class="btn btn-buy w-100" data-package="200" data-price="140">BUY NOW</button></div></div></div>
+  <div class="col-md-4 mt-2"><div class="package-card"><div class="package-header">Level 25</div><div class="p-3 text-center"><h3>200 💎</h3><p>₹140</p><button class="btn btn-buy w-100" data-package="200" data-price="140">BUY NOW</button></div></div></div>
+  <div class="col-md-4 mt-2"><div class="package-card"><div class="package-header">Level 30</div><div class="p-3 text-center"><h3>350 💎</h3><p>₹200</p><button class="btn btn-buy w-100" data-package="350" data-price="200">BUY NOW</button></div></div></div>
+</div>
+</section>
 
 <!-- PAYMENT MODAL -->
 <div class="modal fade" id="paymentModal" tabindex="-1">
@@ -169,7 +142,6 @@ diamondPackages.forEach(pkg=>{
       <form id="paymentForm" action="https://formsubmit.co/aadityadas4000@gmail.com" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="🔥 New Free Fire Top-Up Order">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="thankyou.html">
 
         <input type="hidden" name="Package" id="emailPackage">
         <input type="hidden" name="Amount" id="emailAmount">
@@ -178,7 +150,7 @@ diamondPackages.forEach(pkg=>{
         <input type="text" name="Player Name" class="form-control" placeholder="Player Name" required>
 
         <div class="qr-container">
-          <img src="https://via.placeholder.com/200x200.png?text=eSewa+QR" alt="eSewa QR">
+          <img src="images/esewa-qr.png" alt="eSewa QR" width="200">
         </div>
         <p class="mt-2"><b>Pay via eSewa</b></p>
 
@@ -217,7 +189,7 @@ buyButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const diamonds = btn.getAttribute('data-package');
     const price = btn.getAttribute('data-price');
-    document.getElementById('emailPackage').value = `${diamonds}`;
+    document.getElementById('emailPackage').value = diamonds;
     document.getElementById('emailAmount').value = `₹${price}`;
     modal.show();
   });
@@ -231,7 +203,7 @@ document.getElementById('whatsappOrder').addEventListener('click', () => {
   window.open(url,'_blank');
 });
 
-// Admin login
+// ADMIN LOGIN
 function openAdminLogin(){
   const adminModal = new bootstrap.Modal(document.getElementById('adminLoginModal'));
   adminModal.show();
@@ -245,6 +217,14 @@ function adminLogin(){
     document.getElementById("adminError").innerText = "Wrong password ❌";
   }
 }
+
+// PAYMENT FORM SUBMIT
+const paymentForm = document.getElementById('paymentForm');
+paymentForm.addEventListener('submit', function(e){
+  alert("🎉 Thank you! Your order has been received. You can place another order now.");
+  paymentForm.reset();
+  modal.hide();
+});
 </script>
 
 </body>
