@@ -1,186 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aaditya Top Up Centre | Instant Free Fire Diamonds</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-:root{
-  --primary-red:#FF4655;
-  --primary-orange:#FF8C42;
-  --primary-yellow:#FFD166;
-  --dark-bg:#0F1419;
-  --card-bg:#1A202C;
-  --text-light:#F7FAFC;
-}
-body{font-family:'Exo 2',sans-serif; background:var(--dark-bg); color:var(--text-light); margin:0;}
-.navbar{background:rgba(26,32,44,0.95); border-bottom:2px solid var(--primary-red);}
-.navbar-brand{color:var(--primary-yellow);}
-.hero{padding:40px; margin:30px auto; border:1px solid var(--primary-red); border-radius:15px; text-align:center;}
-.package-card{background:var(--card-bg); border-radius:12px; padding:0; margin-bottom:20px;}
-.package-header{background:linear-gradient(to right,var(--primary-red),var(--primary-orange)); color:#fff; padding:10px; font-weight:bold; text-align:center;}
-.btn-buy{background:linear-gradient(to right,var(--primary-red),var(--primary-orange)); color:#fff; border:none; padding:12px 25px; border-radius:8px; font-weight:bold;}
-.qr-container{background:#fff; padding:20px; border-radius:10px; margin:20px auto; width:200px;}
-.upload-area{border:2px dashed var(--primary-yellow); border-radius:10px; padding:20px; text-align:center; margin:20px 0;}
-.modal-body input, .modal-body textarea{margin:5px 0;}
-</style>
+  <meta charset="UTF-8">
+  <title>Aaditya Top Up Centre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f172a;
+      color:#fff;
+    }
+    header{
+      background:#020617;
+      padding:15px;
+      text-align:center;
+      font-size:22px;
+      font-weight:bold;
+      color:#38bdf8;
+    }
+    section{
+      padding:15px;
+    }
+    .card{
+      background:#020617;
+      border-radius:10px;
+      padding:15px;
+      margin-bottom:15px;
+      box-shadow:0 0 10px rgba(0,0,0,0.4);
+    }
+    h2{
+      color:#22c55e;
+      margin-top:0;
+    }
+    ul{
+      padding-left:18px;
+    }
+    li{
+      margin-bottom:6px;
+    }
+    .qr{
+      text-align:center;
+    }
+    .qr img{
+      max-width:220px;
+      border-radius:10px;
+      background:#fff;
+      padding:5px;
+    }
+    input, textarea, select, button{
+      width:100%;
+      padding:10px;
+      margin-top:8px;
+      border:none;
+      border-radius:6px;
+      font-size:15px;
+    }
+    button{
+      background:#22c55e;
+      color:#000;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .whatsapp{
+      background:#25D366;
+      color:#000;
+      text-align:center;
+      padding:12px;
+      border-radius:8px;
+      font-weight:bold;
+      margin-top:10px;
+      display:block;
+      text-decoration:none;
+    }
+    footer{
+      text-align:center;
+      font-size:13px;
+      padding:10px;
+      color:#94a3b8;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAVIGATION -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-<div class="container">
-<a class="navbar-brand" href="#"><i class="fas fa-fire"></i> Aaditya Top Up Centre</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-  <ul class="navbar-nav ms-auto">
-    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#topup">Top-Up</a></li>
-    <li class="nav-item"><a class="nav-link" href="#adminLogin" onclick="openAdminLogin()">Admin</a></li>
+<header>🔥 Aaditya Top Up Centre 🔥</header>
+
+<section class="card">
+  <h2>💎 Top-Up Price List</h2>
+  <ul>
+    <li>Rs.100 → 115 💎</li>
+    <li>Rs.200 → 240 💎</li>
+    <li>Rs.295 → 355 💎</li>
+    <li>Rs.395 → 480 💎</li>
+    <li>Rs.530 → 610 💎</li>
+    <li>Rs.710 → 850 💎</li>
+    <li>Rs.810 → 965 💎</li>
+    <li>Rs.910 → 1090 💎</li>
+    <li>Rs.1010 → 1240 💎</li>
+    <li>Rs.1240 → 1480 💎</li>
+    <li>Rs.1430 → 1720 💎</li>
+    <li>Rs.1620 → 1960 💎</li>
+    <li>Rs.1615 → 2090 💎</li>
+    <li>Rs.2150 → 2530 💎</li>
+    <li>Rs.4800 → 5060 💎</li>
+    <li>Rs.6700 → 7590 💎</li>
+    <li>Rs.8600 → 10120 💎</li>
+    <li>Rs.16200 → 20240 💎</li>
   </ul>
-</div>
-</div>
-</nav>
-
-<!-- HERO -->
-<section id="home" class="container">
-<div class="hero">
-<h1>📌 TOP-UP LIST 💎</h1>
-<p>Aaditya Top Up Centre ⚡</p>
-<a href="#topup" class="btn btn-buy mt-3">VIEW ALL PACKAGES</a>
-</div>
 </section>
 
-<!-- TOP-UP PACKAGES -->
-<section id="topup" class="container mt-5">
-<div class="row">
-
-<!-- PACKAGE 1 -->
-<div class="col-md-4">
-  <div class="package-card">
-    <div class="package-header">₹100 PACK</div>
-    <div class="text-center p-3">
-      <h3>115 💎</h3>
-      <p>₹100 Only</p>
-      <button class="btn btn-buy w-100" data-package="115" data-price="100">BUY NOW</button>
-    </div>
-  </div>
-</div>
-
-<!-- PACKAGE 2 -->
-<div class="col-md-4">
-  <div class="package-card">
-    <div class="package-header">₹200 PACK</div>
-    <div class="text-center p-3">
-      <h3>240 💎</h3>
-      <p>₹200 Only</p>
-      <button class="btn btn-buy w-100" data-package="240" data-price="200">BUY NOW</button>
-    </div>
-  </div>
-</div>
-
-<!-- Add more packages similarly -->
-</div>
+<section class="card">
+  <h2>🎟 Membership Deals</h2>
+  <ul>
+    <li>Rs.200 → Weekly (450 💎)</li>
+    <li>Rs.1090 → Monthly (2500 💎)</li>
+    <li>Rs.75 → Weekly Lite (90 💎)</li>
+    <li>Rs.790 → Level Up (1270 💎)</li>
+  </ul>
 </section>
 
-<!-- PAYMENT MODAL -->
-<div class="modal fade" id="paymentModal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content p-3">
-    <div class="modal-header">
-      <h5 class="modal-title">Complete Your Payment</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-      <form action="https://formsubmit.co/aadityadas4000@gmail.com" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="🔥 New Free Fire Top-Up Order">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="thankyou.html">
+<section class="card">
+  <h2>🛡 Evo Access</h2>
+  <ul>
+    <li>Rs.140 → 3 Days</li>
+    <li>Rs.195 → 7 Days</li>
+    <li>Rs.460 → 30 Days</li>
+  </ul>
+</section>
 
-        <input type="hidden" name="Package" id="emailPackage">
-        <input type="hidden" name="Amount" id="emailAmount">
+<section class="card qr">
+  <h2>💵 Pay via eSewa</h2>
+  <img src="https://github.com/user-attachments/assets/76fe4463-67fd-4036-b122-62944823e974" alt="eSewa QR">
+  <p>📸 Pay & take screenshot</p>
+</section>
 
-        <input type="text" name="Free Fire UID" class="form-control" placeholder="Enter Free Fire UID" required>
-        <input type="text" name="Player Name" class="form-control" placeholder="Player Name" required>
+<section class="card">
+  <h2>🆔 Order Form</h2>
 
-        <div class="qr-container">
-          <img src="images/esewa-qr.png" alt="eSewa QR" width="200">
-        </div>
-        <p class="mt-2"><b>Pay via eSewa</b></p>
+  <form action="mailto:aadityadas4000@gmail.com" method="post" enctype="text/plain">
+    <input type="text" name="Player ID" placeholder="Enter Player ID" required>
+    <select name="Package" required>
+      <option value="">Select Package</option>
+      <option>Diamond Top-Up</option>
+      <option>Weekly / Monthly</option>
+      <option>Evo Access</option>
+      <option>Level Up</option>
+    </select>
+    <textarea name="Message" placeholder="Order details"></textarea>
+    <button type="submit">Send Order to Gmail</button>
+  </form>
 
-        <input type="file" name="Payment Screenshot" class="form-control" accept="image/*" required>
+  <a class="whatsapp"
+     href="https://wa.me/977XXXXXXXXXX?text=Hello%20Aaditya%20Top%20Up%20Centre,%20I%20want%20to%20place%20an%20order">
+     📲 Order on WhatsApp
+  </a>
+</section>
 
-        <button type="submit" class="btn btn-buy mt-3 w-100">CONFIRM ORDER</button>
-      </form>
-
-      <a id="whatsappOrder" class="btn btn-success mt-2 w-100">
-        <i class="fab fa-whatsapp"></i> Send Details on WhatsApp
-      </a>
-
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ADMIN LOGIN MODAL -->
-<div class="modal fade" id="adminLoginModal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content p-3">
-<h5 class="text-center">🔐 Admin Login</h5>
-<input type="password" id="adminPass" class="form-control mt-2" placeholder="Enter Admin Password">
-<button class="btn btn-danger w-100 mt-2" onclick="adminLogin()">LOGIN</button>
-<p id="adminError" class="text-danger mt-2"></p>
-</div>
-</div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-const buyButtons=document.querySelectorAll('.btn-buy');
-const modalEl=document.getElementById('paymentModal');
-const modal=new bootstrap.Modal(modalEl);
-
-buyButtons.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const diamonds=btn.getAttribute('data-package');
-    const price=btn.getAttribute('data-price');
-    document.getElementById('emailPackage').value=diamonds+" Diamonds";
-    document.getElementById('emailAmount').value="₹"+price;
-    modal.show();
-  });
-});
-
-const whatsappBtn=document.getElementById('whatsappOrder');
-whatsappBtn.addEventListener('click',()=>{
-  const pkg=document.getElementById('emailPackage').value;
-  const amt=document.getElementById('emailAmount').value;
-  const message=`Hello Aaditya Top Up Centre 👋\nI have completed payment.\n📦 Package: ${pkg}\n💰 Amount: ${amt}\nI will send payment screenshot now.`;
-  const url=`https://wa.me/9779703078638?text=${encodeURIComponent(message)}`;
-  window.open(url,'_blank');
-});
-
-// ADMIN
-function openAdminLogin(){
-  var adminModal=new bootstrap.Modal(document.getElementById('adminLoginModal'));
-  adminModal.show();
-}
-
-function adminLogin(){
-  const password=document.getElementById('adminPass').value;
-  if(password==="Aaditya@123"){
-    alert("✅ Admin Logged In! Open Gmail to see orders.");
-    window.open("https://mail.google.com","_blank");
-  }else{
-    document.getElementById("adminError").innerText="Wrong password ❌";
-  }
-}
-</script>
+<footer>
+  © 2026 Aaditya Top Up Centre
+</footer>
 
 </body>
-  </html>
+</html>
