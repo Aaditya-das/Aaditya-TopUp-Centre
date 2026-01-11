@@ -148,3 +148,20 @@ document.getElementById("orderForm").reset();
 
 </body>
   </html>
+<script>
+function selectPackage(pkg, amt){
+  document.getElementById("selectedPackage").value = pkg;
+  document.getElementById("selectedAmount").value = amt;
+
+  // Debug (optional)
+  console.log("Package:", pkg);
+  console.log("Amount:", amt);
+
+  var modal = new bootstrap.Modal(document.getElementById("payModal"));
+  modal.show();
+}
+</script>
+
+</body>
+</html>
+
